@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Zahra Iqbal | Observatory Portfolio</title>
+<meta name="description" content="Portfolio of Zahra Iqbal, third-year Computer Science student at the University of Edinburgh.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=IBM+Plex+Mono:wght@400;500&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--void:#090D14;--navy:#101722;--slate:#17232B;--amber:#D69A5A;--gold:#E7C68E;--mint:#A8C7C0;--lav:#8D91AA;--paper:#D7D0BE;--text:#F1E9D9;--text2:#B8C1C8;--ink:#2a2620;
+--serif:'Fraunces',Georgia,serif;--mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;--sans:'Figtree',system-ui,sans-serif;color-scheme:dark;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:calc(64px + env(safe-area-inset-top,0px));height:auto}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--void);color:var(--text);font:17px/1.65 var(--sans);overflow-x:hidden}
+a{color:var(--gold)}
+:focus-visible{outline:2px solid var(--mint);outline-offset:3px}
+.mono{font-family:var(--mono);font-size:.78rem;letter-spacing:.04em;color:var(--mint)}
+h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;line-height:1.1}
+h2{font-size:clamp(2rem,4.5vw,3.2rem);margin:.3rem 0 1rem}
+.wrap{max-width:1120px;margin:0 auto;padding:0 clamp(1.1rem,4vw,2rem)}
+section{padding:clamp(4rem,9vw,7rem) 0;position:relative}
+.skip{position:absolute;left:-999px;top:0;background:var(--amber);color:var(--void);padding:.5rem 1rem;z-index:100}.skip:focus{left:0}
+/* nav */
+header.nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(9,13,20,.94);border-bottom:1px solid #243140;padding-top:env(safe-area-inset-top,0px)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:rgba(9,13,20,.94);z-index:60}
+.nav .in{display:flex;align-items:center;justify-content:space-between;height:56px}
+.mono-logo{font-family:var(--serif);font-size:1.25rem;color:var(--gold);text-decoration:none;border:1px solid var(--amber);padding:.1rem .6rem;border-radius:2px}
+.nav ul{display:flex;gap:.3rem;list-style:none;margin:0;padding:0}
+.nav ul a{display:block;padding:.5rem .9rem;color:var(--text2);text-decoration:none;font-family:var(--mono);font-size:.82rem;border-bottom:2px solid transparent}
+.nav ul a:hover{color:var(--text)}.nav ul a.on{color:var(--gold);border-color:var(--amber)}
+.burger{display:none;background:none;border:1px solid #33465a;color:var(--text);padding:.55rem .8rem;font:inherit;font-family:var(--mono);font-size:.8rem;min-height:44px;cursor:pointer}
+#prog{position:absolute;left:0;bottom:-1px;height:2px;width:0;background:var(--amber)}
+@media(max-width:720px){.burger{display:block}.nav ul{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:var(--void);border-bottom:1px solid #243140;padding:.5rem 1rem 1rem}.nav ul.open{display:flex}.nav ul a{padding:.9rem .5rem}}
+/* hero */
+#arrival{min-height:100svh;display:flex;align-items:flex-end;padding:7rem 0 3.5rem;overflow:hidden}
+.hero{position:relative;z-index:2;max-width:560px}
+.hero h1{font-size:clamp(3.2rem,9vw,6.4rem);letter-spacing:-.02em;margin:.8rem 0 1rem;font-weight:600;font-variation-settings:"opsz" 144}
+.hero .sub{font-size:1.1rem;color:var(--text);margin:0}.hero .sub span{color:var(--text2)}
+.hero .tag{font-family:var(--serif);font-style:italic;font-size:1.25rem;color:var(--gold);margin:1.2rem 0 1.8rem;max-width:30ch}
+.btns{display:flex;flex-wrap:wrap;gap:.8rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:.6rem 1.3rem;font:500 .95rem var(--sans);text-decoration:none;cursor:pointer;border:2px solid var(--amber);background:var(--amber);color:var(--void);box-shadow:3px 3px 0 #6b4a28;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 #6b4a28}
+.btn.ghost{background:transparent;color:var(--gold);box-shadow:3px 3px 0 #2c3a48;border-color:#4b5d70}
+.descend{position:absolute;z-index:2;right:clamp(1rem,4vw,2rem);bottom:1.5rem;writing-mode:vertical-rl}
+.descend::after{content:"";display:inline-block;width:1px;height:40px;background:var(--mint);margin-top:.6rem;animation:drip 2.4s ease-in-out infinite}
+@keyframes drip{50%{transform:scaleY(.4);transform-origin:top}}
+#sky{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}#bh{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.hero h1,.hero .sub,.hero .tag{text-shadow:0 2px 14px rgba(9,13,20,.95)}
+#ptr{position:fixed;left:0;top:0;z-index:70;pointer-events:none;opacity:0;transition:opacity .2s;will-change:transform}
+#ptr i{position:absolute;left:-8px;top:-8px;width:16px;height:16px;border-radius:50%;background:#000;box-shadow:0 0 0 1.5px var(--gold),0 0 12px 3px rgba(214,154,90,.6);transition:transform .2s}
+#ptr::after{content:"";position:absolute;left:-19px;top:-4px;width:38px;height:8px;border:2px dashed rgba(231,198,142,.9);border-radius:50%;transform:rotate(-12deg)}
+#ptr.hot i{transform:scale(1.5)}#ptr.hot::after{border-color:var(--mint)}
+body.bhc,body.bhc *{cursor:none!important}body.bhc dialog,body.bhc dialog *{cursor:auto!important}
+@media(prefers-reduced-motion:reduce){#ptr{display:none}}
+main,footer{position:relative;z-index:1}section>.wrap{position:relative;z-index:1}
+.w{display:inline-block}.card{cursor:pointer}
+.dv{display:block;width:100%;height:70px}.cn{position:absolute;width:260px;height:260px;opacity:.5;pointer-events:none;z-index:0}
+@media(max-width:900px){.cn{display:none}}
+.astro{position:fixed;top:0;right:8px;width:34px;z-index:30;pointer-events:none;display:none}
+.astro svg{display:block;width:100%;height:auto;animation:bob 4s ease-in-out infinite}@keyframes bob{50%{transform:translateY(-6px) rotate(6deg)}}
+@media(min-width:1260px){.astro{display:block}}
+/* about */
+#about{background:rgba(16,23,34,.7)}
+.about{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(2rem,6vw,5rem);align-items:start}
+.side{background:var(--slate);border:2px solid #34495a;padding:1.4rem;position:relative}
+.side svg{width:100%;height:auto;display:block}
+.side dl{margin:1rem 0 0;display:grid;grid-template-columns:auto 1fr;gap:.3rem 1rem}.side dt{color:var(--text2)}.side dd{margin:0}
+.bio{background:var(--paper);color:var(--ink);padding:clamp(1.4rem,3vw,2.4rem);border-radius:2px;box-shadow:6px 6px 0 #05080d;max-width:62ch}
+.bio .mono{color:#4d5d57}.bio h2{color:var(--ink)}.bio p{margin:.8rem 0}
+.edit{background:rgba(214,154,90,.25);padding:0 .25rem}
+.note{font-family:'Segoe Script','Bradley Hand','Comic Sans MS',cursive;color:#7a4b1c;transform:rotate(-2deg);display:inline-block;margin-top:.6rem;font-size:1rem}
+@media(max-width:820px){.about{grid-template-columns:1fr}}
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1rem;margin-top:3.5rem}
+.sk{border:1px solid #33465a;border-left:3px solid var(--mint);padding:1rem 1.1rem;background:var(--void)}
+.sk h3{font-size:1.15rem;display:flex;gap:.6rem;align-items:center}
+.pls{width:22px;height:22px;flex:none}.sk:hover .pls .r,.sk:focus-within .pls .r{animation:spin 3s linear infinite;transform-origin:12px 12px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.sk ul{list-style:none;margin:.8rem 0 0;padding:0;display:flex;flex-wrap:wrap;gap:.4rem}
+.sk li{font-family:var(--mono);font-size:.78rem;border:1px dashed var(--lav);padding:.15rem .5rem;color:var(--text2)}
+/* projects */
+.head p.mono{margin:0}
+.grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1.6rem;margin-top:2.5rem}
+.card{grid-column:span 3;background:var(--navy);border:2px solid #2d3d4d;display:flex;flex-direction:column;position:relative;transition:border-color .2s}
+.card:first-child{grid-column:span 6;flex-direction:row}
+.card:nth-child(3){margin-top:2rem}.card:nth-child(5){margin-top:2rem}
+.card:hover{border-color:var(--amber)}
+.card .shot{aspect-ratio:16/9;background:var(--void);overflow:hidden;flex:none}
+.card:first-child .shot{width:58%;aspect-ratio:auto;min-height:300px}
+.shot img{width:100%;height:100%;object-fit:cover;display:block}
+.card .body{padding:1.3rem 1.4rem 1.5rem;display:flex;flex-direction:column;gap:.8rem;flex:1}
+.card h3{font-size:1.6rem}.card p{margin:0;color:var(--text2);max-width:60ch}
+.cls{display:flex;gap:.6rem;align-items:center}
+.dot{width:8px;height:8px;background:var(--mint);animation:pulse 2.6s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.25;transform:scale(.7)}}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;list-style:none;margin:0;padding:0}
+.tags li{font-family:var(--mono);font-size:.74rem;color:var(--mint);border:1px solid #2f4a48;padding:.1rem .5rem}
+.card .btns{margin-top:auto;padding-top:.5rem}
+.btn.sm{min-height:42px;font-size:.88rem;padding:.4rem 1rem}
+.ph{display:inline-block;font-family:var(--mono);font-size:.72rem;color:var(--void);background:var(--lav);padding:0 .4rem}
+@media(max-width:860px){.grid{display:flex;flex-direction:column}.card,.card:first-child{flex-direction:column}.card:first-child .shot{width:100%;min-height:0;aspect-ratio:16/9}.card:nth-child(n){margin-top:0}}
+/* dialog */
+dialog{border:2px solid var(--amber);background:var(--navy);color:var(--text);padding:0;width:min(860px,94vw);max-height:90vh;overflow:auto}
+dialog::backdrop{background:rgba(5,8,13,.85)}
+.dlg-h{display:flex;justify-content:space-between;align-items:center;padding:.6rem 1rem;border-bottom:1px solid #33465a;background:var(--void);position:sticky;top:0}
+.dlg-b{padding:1.4rem;display:grid;gap:1.2rem}.dlg-b img{width:100%;aspect-ratio:16/9;object-fit:cover;border:1px solid #33465a}
+.dlg-b h3{font-size:2rem}.dlg-b h4{margin:0;font:500 .8rem var(--mono);color:var(--amber)}.dlg-b p{margin:.2rem 0 0;color:var(--text2);max-width:65ch}
+.x{background:none;border:1px solid #4b5d70;color:var(--text);min-height:44px;padding:0 1rem;font:inherit;font-family:var(--mono);font-size:.8rem;cursor:pointer}
+/* contact */
+#contact{background:linear-gradient(rgba(9,13,20,0),rgba(23,35,43,.85))}
+.sig{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center}
+.sig p.lead{max-width:48ch;color:var(--text2);font-size:1.1rem}
+.term{background:#05080d;border:2px solid #34495a;padding:1.3rem;font-family:var(--mono);font-size:.88rem;line-height:1.9}
+.term .row{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;border-bottom:1px dashed #243140;padding:.3rem 0}
+.term .miss{color:var(--lav)}
+#toast{min-height:1.5em;color:var(--mint);font-family:var(--mono);font-size:.85rem;margin-top:.8rem}
+.ship{animation:fly 7s ease-in-out infinite}@keyframes fly{50%{transform:translateX(24px)}}
+@media(max-width:820px){.sig{grid-template-columns:1fr}}
+footer{background:#05080d;padding:2rem 0;border-top:1px solid #1d2a38;color:var(--text2);font-size:.92rem}
+footer .in{display:flex;flex-wrap:wrap;gap:1rem 2rem;align-items:center;justify-content:space-between}
+.starbtn{background:none;border:0;cursor:pointer;padding:.5rem;min-width:44px;min-height:44px}
+#fact{flex-basis:100%;color:var(--gold);font-family:var(--serif);font-style:italic;min-height:1.4em;margin:0}
+.rv{opacity:0;transform:translateY(14px);transition:opacity .7s,transform .7s}.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#about">Skip to content</a>
+<header class="nav"><div class="wrap in">
+<a class="mono-logo" href="#arrival" aria-label="Zahra Iqbal, back to top">Z.I.</a>
+<button class="burger" aria-expanded="false" aria-controls="menu">Menu</button>
+<nav aria-label="Main"><ul id="menu">
+<li><a href="#arrival" data-s="arrival">Arrival</a></li><li><a href="#about" data-s="about">About</a></li><li><a href="#projects" data-s="projects">Projects</a></li><li><a href="#contact" data-s="contact">Contact</a></li></ul></nav>
+</div><div id="prog"></div></header>
+
+<canvas id="sky" aria-hidden="true"></canvas><div id="ptr" aria-hidden="true"><i></i></div>
+<div class="astro" id="astro" aria-hidden="true"><svg viewBox="0 0 16 20" shape-rendering="crispEdges"></svg></div>
+<main>
+<section id="arrival" aria-label="Arrival">
+<canvas id="bh" aria-hidden="true"></canvas>
+<div class="wrap" style="position:relative;width:100%"><div class="hero">
+<span class="mono">NOTE// UNDER MAINTENCE AT THE MOMENT </span>
+<h1>Zahra Iqbal</h1>
+<p class="sub">Third-year Computer Science student<br><span>University of Edinburgh</span></p>
+<p class="tag"></p>
+<div class="btns"><a class="btn" href="#projects">Explore My Projects</a><a class="btn ghost" href="#about">About Me</a></div>
+</div></div>
+<span class="descend mono" aria-hidden="true">SCROLL TO DESCEND</span>
+</section>
+
+<section id="about"><div class="wrap">
+<div class="about">
+<aside class="side" aria-label="Explorer profile card">
+<svg viewBox="0 0 240 230" role="img" aria-label="Pixel-art astronaut beside a hand-drawn orbit sketch">
+<g fill="none" stroke="#A8C7C0" stroke-width="1.3" stroke-linecap="round" opacity=".8"><ellipse cx="120" cy="115" rx="105" ry="48" transform="rotate(-18 120 115)" stroke-dasharray="5 4"/><ellipse cx="120" cy="115" rx="70" ry="30" transform="rotate(-14 120 115)"/></g>
+<g fill="#E7C68E"><circle cx="38" cy="150" r="3"/><circle cx="205" cy="68" r="2.5"/><circle cx="196" cy="170" r="2"/></g>
+<path d="M38 150 L196 170 M196 170 L205 68" stroke="#8D91AA" stroke-width="1" fill="none" stroke-dasharray="2 3"/>
+<svg id="abAstro" x="84" y="50" width="72" height="90" viewBox="0 0 16 20" shape-rendering="crispEdges"></svg>
+<text x="16" y="212" fill="#E7C68E" font-family="cursive" font-size="14" transform="rotate(-3 16 212)">↖ this is kitkat btw</text>
+</svg>
+<dl class="mono"><dt>LOG</dt><dd></dd><dt>STATUS</dt><dd>CURRENT STATUS: PROBABLY SLEEPING</dd></dl>
+</aside>
+<div class="bio">
+<span class="mono">02 / PROFILE</span>
+<h2>About Me</h2>
+<p>I am currently a third-year Computer Science student at the University of Edinburgh with an interest in systems engineering and large-scale computational systems.</p>
+<p><span class="edit">I enjoy building simulations, prototyping complex systems, and exploring the underlying principles that make modern technology work. I’m particularly interested in understanding systems from the ground up, from their theoretical foundations to the engineering that brings them into the 3D!
+</span></p>
+<p><span class="edit">I spend much of my free time playing video games, mostly ROBLOX and League of Legends, and exploring theoretical physics through independent research and writing. I also enjoy hands-on experimentation with microcontrollers, Arduinos, and breadboard circuits.</span></p>
+<span class="note">msg me if u want to play league together..</span>
+</div></div>
+
+<div class="head" style="margin-top:5rem"><span class="mono">03 / TECHNICAL CONCEPTS & UNDERSTANDING</span><h2>Skills and current interests</h2></div>
+<div class="skills" id="skills"></div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+<div class="head"><span class="mono">04 / SOME OF MY FAVOURITE PROJECTS</span><h2>Project Archive</h2><p class="mono"> // CLICK INSPECT FOR DETAILS </p></div>
+<div class="grid" id="grid"></div>
+</div></section>
+
+<section id="contact"><div class="wrap sig">
+<div><span class="mono">05 / CONTACT ME</span><h2>Send a Message</h2>
+<p class="lead">Want to get in touch or ask about my projects? I’d love to hear from you.</p>
+<div class="btns"><a class="btn" id="mail" href="#contact">Email Me!</a><button class="btn ghost" id="copy" type="button">Copy email</button></div>
+<div id="toast" role="status" aria-live="polite"></div></div>
+<div class="term" aria-label="Contact details">
+<svg class="ship" width="64" height="32" viewBox="0 0 32 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="4" y="6" width="20" height="4" fill="#D7D0BE"/><rect x="24" y="7" width="4" height="2" fill="#D69A5A"/><rect x="10" y="3" width="8" height="3" fill="#8D91AA"/><rect x="0" y="7" width="4" height="2" fill="#A8C7C0"/></svg>
+<div class="row"><span>STATUS</span><span style="color:var(--mint)">RECEIVING</span></div>
+<div class="row"><span>EMAIL</span><span id="e-t"></span></div>
+<div class="row"><span>GITHUB</span><span id="g-t"></span></div>
+</div></div></section>
+</main>
+frt
+<footer><div class="wrap in">
+<span>© <span id="yr"></span> Zahra Nya Iqbal · 2026</span>
+<span id="f-links"></span>
+<span><span class="mono">End of transmission.</span>
+<button class="starbtn" id="star" aria-label="Reveal an astronomy fact"><svg width="22" height="22" viewBox="0 0 11 11" shape-rendering="crispEdges" aria-hidden="true"><path fill="#E7C68E" d="M5 0h1v4h5v1H6v6H5V5H0V4h5z"/></svg></button></span>
+<p id="fact" role="status" aria-live="polite"></p>
+</div></footer>
+
+<dialog id="dlg" aria-labelledby="d-t"><div class="dlg-h"><span class="mono" id="d-m"></span><button class="x" id="d-x" type="button">Close</button></div><div class="dlg-b" id="d-b"></div></dialog>
+
+<script>
+/* ===== EDIT HERE: all of Zahra’s content lives in this CONFIG ===== */
+const CONFIG={
+ email:"zahraiqbal148@gmail.com",            // e.g. "name@example.com"
+ github:"https://github.com/zahraiqb",           // full URL
+ linkedin:"",         // full URL
+ skills:[
+  {name:"Programming Languages",items:["C++ (personal favourite)","Java", "Python", "C", "HTML/CSS/JS", "React", "Swift", "Pandas", "TypeScript"]},
+  {name:"Algorithms and Computer Science",items:["Machine Learning","Object Oriented Programming", "TCP/IP Networking", "OS"]},
+  {name:"Frameworks and Tools",items:["Spring", "Node.js", "Docker", "Maven"]},
+  {name:"Practical Experience",items:["signal processing", 'impact detection', 'mobile development', ]},
+  {name:"Currently Exploring",items:["AWS","Kubernetes","games development"]}
+ ],
+ projects:[
+  {id:1,classification:"Planet",title:"EggTimer",
+             description:"EggTimer is an egg-cooking companion mobile app for iOS and Android. First you pick between your desired type of egg(Boiled, Fried, Scrambled etc),and if applicable, a style (soft, jammy, sunny-side-up and more, and the app gives you step-by-step instructions alongside a countdown timer so you'll never overcook your eggs again!. The timer also uses an end timestamp instead of counting ticks, so it stays accurate even when the app is backgrounded.",image:"eggs.png",technologies:["React Native","Expo","JavaScript","lightweight stack navigation"],liveUrl:"https://eggt.netlify.app",sourceUrl:"https://eggt.netlify.app",detailUrl:"",
+   problem:"I eat a LOT of boiled eggs, but my timekeeping is horrific and my yolks kept coming out too hard. I built EggTimer, a cross-platform mobile app using React Native and Expo, to take the guesswork out of cooking eggs.",contribution:"I designed and built the app end to end as a solo project. That covered the UI and design system (a cream and yellow colour palette and egg graphics drawn entirely from React Native views), the screen flow, the recipe data and the countdown timer. Navigation is a lightweight custom stack with Android back-button handling, which keeps dependencies minimal.",challenges:"The timer was the hardest part. A naive setInterval type counter drifts and breaks when the app is backgrounded, so I built a custom useCountdown hook that counts against an end timestamp. It guarantees only one interval runs at a time, never drops below zero, resyncs through AppState when the app returns to the foreground, and cleans up on unmount. After plenty of research into egg science (yes, it exists), I built a calculation that adjusts boiled-egg times for doneness, egg size and starting temperature. Lastly, all recipes live in a separate data file, so adding a new egg style can be easily done by editing data and no UI adjustmnets are required.",result:"The result is an accessible, easy to use app with not only timing and vibration alerts but also step-by-step instructions. Through this project, i learnt how to structure a mobile app, manage time state reliably, and separate data from UI. I also learnt that a simple looking app can hide a lot of (annoying) details.  Also deployed as a web app for easy access!(link below)" },
+  {id:2,classification:"Pulsar",title:"GravSim - A Gravity Simulator",description:"Gravsim is an interactive N-body gravity simulator that runs in the user's browser. Its physics engine is written in C++ and compiled to WebAssembly, so it calculates how planets, stars,black holes and other celestial objects pull and interact with eachother in real time. You can pick a scenario (the solar system, binary stars, 3 body orbits etc), then change the integration method and step size, add relativistic corrections, and watch the orbits happen in 3D! In this project i really wanted to focus on the accuracy of the mathematics: the numerical integrators are tested against known results such as energy conservation and Mercury’s orbital precession.",image:"g1.png",technologies:["C++20", "1PN correction", "Euler", "RK4", "leapfrog", "Emscripten", "Typescript", "Three.js", "CMake"],liveUrl:"https://zahraiqb.github.io/GravSim/",sourceUrl:"https://zahraiqb.github.io/GravSim/",detailUrl:"https://zahraiqb.github.io/GravSim/",
+    problem:"Gravity is easy to animate and hard to simulate correctly. The goal was to make orbital mechanics something people can explore (the solar system, binary stars, black holes, even a toy Big Bang) while keeping the physics honest enough to test against known results. It’s aimed at students, hobbyists and anyone curious about how gravity shapes the cosmos.", contribution:"I designed and built GravSim end to end: the C++ physics engine, the scenario library, the 3D web interface and the deployment pipeline. That covers 15 scenarios, five numerical integrators, an optional relativistic correction, and interface features like gravity wells and live mass sliders. I also wrote the test suite and the build and deploy setup.",challenges:
+    "Physics core: C++20 Newtonian N-body engine, compiled to WebAssembly with Emscripten. Integrators: Euler, RK4, leapfrog, Yoshida 4th-order (symplectic) and adaptive Dormand–Prince, so energy drift can be compared directly. Relativity: optional first post-Newtonian correction, checked against Mercury’s ~43″ per century perihelion advance and the star S2’s ~12′ per orbit around Sagittarius A*. Validation/Testing: 27 automated tests covering conservation laws, known orbital periods and the figure-eight three-body solution. Frontend: TypeScript, Three.js and Vite, with procedurally generated planet surfaces. Deployment: GitHub Actions builds the WebAssembly and publishes to GitHub Pages.", result:"GravSim is live at https://zahraiqb.github.io/GravSim/ , with 15 scenarios from planetary systems to a falling astronaut spaghettified by a black hole! (this one defintely needs more work). Honestly, im still not satisfied with this project, even though i ahve tried my best to incorporate accurate mathematics and reasoning, it bugs me that the simulations aren't ever truly 'real', that there will always be room for error. Nevertheless, i have made sure that GravSim's users are made aware of its limits: It is a simplified model for exploration, not a prediction tool."},
+  {id:3,classification:"Moon",title:"Piezoelectric Impact Detector",description:"Satellites are constantly exposed to micrometeoroid and orbital debris impacts, and knowing when a panel has been hit, and roughly how hard, is the first step towards assessing damage and building stronger satellites. The main goal of this project was to create a simple impact detection system on a breadboard which then turns into usable data.",image:"impactdetectorillustration.png",technologies:["Arduino Microcontroller(R160HCA3r)", "Digital Multimeter", "Piezo sensor", "Breadboard (830points)", "python"],liveUrl:"",sourceUrl:"",detailUrl:"", problem:"The brief was to design a low-cost, proof-of-principle impact detection system on a breadboard: one that senses impacts on a spacecraft-panel analogue and turns them into structured, usable data.", contribution:"I built the circuit, mounted the piezo sensor on a metal panel, and set up and tuned the Arduino firmware and Python logger. I also designed and ran a repeatable drop-test procedure to see how the sensor responds to impacts of different energies.",challenges:"A piezo sensor on a metal panel turns vibration into a voltage, which an Arduino Uno reads through its ADC. The firmware tracks a resting baseline and triggers when the signal passes a threshold. A ring buffer keeps the moments just before the impact, and a short lockout stops the plate’s ringing causing false re-triggers. Each event streams over from a USB cable (plugged into my macbook) to a Python script that plots the waveform and logs it to CSV. Validation. One sensor can detect and grade impacts but can’t locate them, and slow drop tests are only a proxy for hypervelocity impacts.", result:"The system reliably detected drops and recorded clean, repeatable waveforms. Peak amplitude rose with drop height, with some natural scatter between repeats. Setting the trigger threshold was a trade-off between catching light impacts and avoiding false alarms, and how well the sensor was bonded to the plate had a big effect on signal strength. The next steps to improve the current model would be adding more sensors to localise impacts, and a faster ADC to capture more of the waveform."},
+  {id:4,classification:"Comet",title:"RiftScan",description:"A real time League of Legends matchcup intelligence,  with useful info about opponents delivered to users before the first wave. Competitive games like League of Legends have fast pacing, but the information players need to make decisions is often scattered across external websites and is way too time-consuming! RiftScan is a desktop companion for League of Legends designed to bring relevant matchup information directly to the loading screen, automatically identifying the current match and presenting useful champion statistics before gameplay begins.",image:"blabla.webp",technologies:["[tech]"],liveUrl:"",sourceUrl:"",detailUrl:"",problem:"The goal is to eliminate manual lookups by connecting local game-client data, remote APIs and a lightweight desktop interface into one automated workflow. The project is currently a work in progress, with live-game integration and macOS compatibility still to be tested.",contribution:"I am developing RiftScan end to end, from local game-state detection and API integration to the desktop overlay. The application uses Python and PyQt6 to coordinate background data retrieval, process live-match information and render a compact, transparent interface that stays out of the player's way. The focus is on making several independent systems work together seamlessly, with minimal user interaction so its not disruptive to the gameplay at all!.",challenges:"Local integration: Detects the League client process and extracts its local connection details to monitor game state without requiring manual match entry. API integration: Uses Riot's Local Client API and Spectator-V5 API to identify the active match and retrieve available participant data. Data processing: Maps champion identifiers and rune IDs to readable information using Riot's Data Dragon static-data service.Desktop interface: Uses Python and PyQt6 to render an invisible overlay with automatic show/hide behaviour. Asynchronous execution: Runs game detection and data retrieval in a background thread to keep the interface responsive.", result:"The main challenge is coordinating systems that operate on different timelines for eg the game client can change state before the remote API registers the match, and the interface must respond without blocking anything. The next stage is validating the full workflow against a live League client, testing overlay behaviour on macOS, and refining reliability and compliance with Riot's third-party application policies (which is very strict unfortunately lol). Difficulties aside, the project is teaching me how to integrate local applications with external services, handle asynchronous state changes, and design a user-facing tool centered around real-time constraints"},
+ /* {id:5,classification:"Anomaly",title:"[Project Five Title]",description:"[Replace with a two or three sentence description of this project.]",image:"",technologies:["[tech]"],liveUrl:"",sourceUrl:"",detailUrl:""} */
+ ]
+};
+const $=s=>document.querySelector(s),pad=n=>String(n).padStart(3,"0");
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const safe=u=>/^https?:\/\//i.test(u||"")?u:"";
+const placeholder=p=>"data:image/svg+xml;utf8,"+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'><rect width='640' height='360' fill='#0d131c'/><g fill='none' stroke='#8D91AA' stroke-width='1.5' stroke-dasharray='6 6'><rect x='24' y='24' width='592' height='312'/><ellipse cx='320' cy='180' rx='170' ry='56' transform='rotate(-14 320 180)'/></g><circle cx='320' cy='180' r='26' fill='#000' stroke='#D69A5A'/><text x='320' y='300' fill='#B8C1C8' font-family='monospace' font-size='16' text-anchor='middle'>PLACEHOLDER · SCREENSHOT OF PROJECT ${pad(p.id)} NEEDED</text></svg>`);
+const pulsar=`<svg class="pls" viewBox="0 0 24 24" aria-hidden="true"><g class="r" fill="none" stroke="#A8C7C0" stroke-width="1"><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(-40 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(50 12 12)" opacity=".5"/></g><circle cx="12" cy="12" r="2.4" fill="#E7C68E"/></svg>`;
+
+/* skills */
+$("#skills").innerHTML=CONFIG.skills.map(g=>`<div class="sk"><h3>${pulsar}${esc(g.name)}</h3><ul>${g.items.map(i=>`<li>${esc(i)}</li>`).join("")}</ul></div>`).join("");
+
+/* projects */
+function primary(p){const l=safe(p.liveUrl),d=safe(p.detailUrl)||(p.detailUrl&&!/^https?:/i.test(p.detailUrl)?p.detailUrl:"");
+ if(l)return`<a class="btn sm" href="${esc(l)}" target="_blank" rel="noopener noreferrer">View Live Project<span class="sr" hidden> (opens in new tab)</span></a>`;
+ if(d)return`<a class="btn sm" href="${esc(d)}">View Output</a>`;
+ return`<button class="btn sm" type="button" data-open="${p.id}">View Output</button>`}
+function card(p){const src=safe(p.sourceUrl);
+ return`<article class="card rv"><div class="shot"><img src="${esc(p.image||placeholder(p))}" alt="${p.image?esc(p.title)+" screenshot":"Placeholder: screenshot for project "+pad(p.id)+" not yet added"}" loading="lazy" width="640" height="360"></div>
+ <div class="body"><div class="cls mono"><span class="dot" aria-hidden="true"></span>DISCOVERY ${pad(p.id)}: ${esc(p.classification.toUpperCase())}${p.image?"":' <span class="ph">PLACEHOLDER</span>'}</div>
+ <h3>${esc(p.title)}</h3><p>${esc(p.description)}</p>
+ <ul class="tags" aria-label="Technologies">${p.technologies.map(t=>`<li>${esc(t)}</li>`).join("")}</ul>
+ <div class="btns">${primary(p)}${src?`<a class="btn sm ghost" href="${esc(src)}" target="_blank" rel="noopener noreferrer">Source Code</a>`:""}<button class="btn sm ghost" type="button" data-open="${p.id}" aria-label="Open research terminal for ${esc(p.title)}">Inspect</button></div></div></article>`}
+$("#grid").innerHTML=CONFIG.projects.map(card).join("");
+
+/* dialog */
+const dlg=$("#dlg");let opener=null;
+document.addEventListener("click",e=>{const b=e.target.closest("[data-open]")||(!e.target.closest("a,button")&&e.target.closest(".card")?.querySelector("[data-open]"));if(!b)return;opener=b;
+ const p=CONFIG.projects.find(x=>x.id==b.dataset.open),src=safe(p.sourceUrl),l=safe(p.liveUrl);
+ $("#d-m").textContent=`RESEARCH TERMINAL // OBJECT ${pad(p.id)}`;
+ const sec=(h,t)=>`<div><h4>${h}</h4><p>${esc(t||"[Add this section’s text in CONFIG.]")}</p></div>`;
+ $("#d-b").innerHTML=`<img src="${esc(p.image||placeholder(p))}" alt="${p.image?esc(p.title)+" screenshot":"Placeholder screenshot"}"><h3 id="d-t">${esc(p.title)}</h3><p>${esc(p.description)}</p>
+ ${sec("MISSION BRIEFING",p.problem)}${sec("MY CONTRIBUTION",p.contribution)}${sec("TECHNICAL NOTES",p.challenges)}${sec("RESULT AND LEARNING",p.result)}
+ <ul class="tags">${p.technologies.map(t=>`<li>${esc(t)}</li>`).join("")}</ul>
+ <div class="btns">${l?`<a class="btn sm" href="${esc(l)}" target="_blank" rel="noopener noreferrer">Launch experiment ↗</a>`:""}${src?`<a class="btn sm ghost" href="${esc(src)}" target="_blank" rel="noopener noreferrer">Inspect source ↗</a>`:""}</div>`;
+ dlg.showModal();$("#d-x").focus()});
+$("#d-x").onclick=()=>dlg.close();
+dlg.addEventListener("click",e=>{if(e.target===dlg)dlg.close()});
+dlg.addEventListener("close",()=>opener&&opener.focus());
+
+/* contact */
+const mail=$("#mail");
+const setT=(id,v,label)=>{const el=$(id);if(!el)return;el.innerHTML=v?`<a href="${esc(v)}" ${label?'target="_blank" rel="noopener noreferrer"':""}>${esc(label||v.replace("mailto:",""))}</a>`:'<span class="miss">[not added yet]</span>'};
+const em=CONFIG.email.trim();
+if(em){mail.href="mailto:"+em;setT("#e-t","mailto:"+em)}else{mail.removeAttribute("href");mail.setAttribute("role","button");mail.setAttribute("aria-disabled","true");mail.style.opacity=".6";setT("#e-t","")}
+setT("#g-t",safe(CONFIG.github),"GitHub profile");
+$("#f-links").innerHTML=[["GitHub",CONFIG.github],["LinkedIn",CONFIG.linkedin]].filter(x=>safe(x[1])).map(x=>`<a href="${esc(x[1])}" target="_blank" rel="noopener noreferrer">${x[0]}</a>`).join(" · ");
+const toast=m=>{$("#toast").textContent=m};
+mail.addEventListener("click",e=>{if(!em){e.preventDefault();toast("No email added yet. Set CONFIG.email in the page source.")}});
+$("#copy").onclick=async()=>{if(!em)return toast("No email added yet. Set CONFIG.email in the page source.");
+ try{await navigator.clipboard.writeText(em);toast("Email copied.")}catch{toast("Copy failed. Select the address in the terminal panel instead.")}};
+
+/* footer */
+$("#yr").textContent=new Date().getFullYear();
+const facts=["Pulsar PSR J1748-2446ad spins about 716 times every second.","A neutron star packs more than the Sun’s mass into a sphere roughly 20 km across.","Light skimming a black hole’s photon sphere can circle it before escaping."];let fi=0;
+$("#star").onclick=()=>{$("#fact").textContent=facts[fi++%facts.length]};
+
+/* nav */
+const burger=document.querySelector(".burger"),menu=$("#menu");
+burger.onclick=()=>{const o=menu.classList.toggle("open");burger.setAttribute("aria-expanded",o)};
+menu.addEventListener("click",e=>{if(e.target.closest("a")){menu.classList.remove("open");burger.setAttribute("aria-expanded","false")}});
+const links=[...document.querySelectorAll("[data-s]")];
+const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting)links.forEach(a=>{const on=a.dataset.s===en.target.id;a.classList.toggle("on",on);on?a.setAttribute("aria-current","true"):a.removeAttribute("aria-current")})}),{rootMargin:"-45% 0px -50% 0px"});
+["arrival","about","projects","contact"].forEach(id=>io.observe($("#"+id)));
+addEventListener("scroll",()=>{const h=document.documentElement;$("#prog").style.width=(scrollY/(h.scrollHeight-innerHeight)*100)+"%"},{passive:true});
+const rio=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add("in");rio.unobserve(en.target)}}),{threshold:.1});
+document.querySelectorAll(".rv").forEach(n=>rio.observe(n));
+
+/* handmade dividers + corner sketches */
+document.body.insertAdjacentHTML("afterbegin",`<svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="rough"><feTurbulence type="fractalNoise" baseFrequency=".04" numOctaves="2" seed="4"/><feDisplacementMap in="SourceGraphic" scale="3.5"/></filter></svg>`);
+const DIV=`<svg class="dv" viewBox="0 0 1200 70" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g filter="url(#rough)" fill="none" stroke="#A8C7C0" stroke-width="1.4" stroke-linecap="round" opacity=".75"><path d="M0 44C140 12 300 62 470 34S760 8 900 38s210 22 300-14" stroke-dasharray="7 5"/><ellipse cx="600" cy="36" rx="120" ry="22" transform="rotate(-8 600 36)"/><path d="M80 58v-8M160 58v-5M240 58v-8M320 58v-5M880 58v-8M960 58v-5M1040 58v-8M1120 58v-5" stroke="#8D91AA"/></g><circle cx="690" cy="27" r="4" fill="#E7C68E"/><circle cx="600" cy="36" r="2.5" fill="#D69A5A"/></svg>`;
+const CN=pos=>`<svg class="cn" style="${pos}" viewBox="0 0 260 260" aria-hidden="true"><g filter="url(#rough)" fill="none" stroke="#8D91AA" stroke-width="1.3"><circle cx="200" cy="60" r="40"/><ellipse cx="200" cy="60" rx="95" ry="36" transform="rotate(-25 200 60)" stroke-dasharray="6 5"/><path d="M60 170l40-30 50 20 30-45" stroke="#A8C7C0"/></g><g fill="#E7C68E"><circle cx="60" cy="170" r="3"/><circle cx="100" cy="140" r="2.5"/><circle cx="150" cy="160" r="3"/><circle cx="180" cy="115" r="2"/></g><text x="40" y="205" fill="#B8C1C8" font-family="cursive" font-size="12">orbit? check again</text></svg>`;
+["about","projects","contact"].forEach(id=>$("#"+id).insertAdjacentHTML("beforebegin",DIV));
+$("#about").insertAdjacentHTML("afterbegin",CN("top:0;right:0"));$("#projects").insertAdjacentHTML("afterbegin",CN("top:0;left:0;transform:scaleX(-1)"));$("#contact").insertAdjacentHTML("beforeend",CN("bottom:0;left:0;transform:scaleY(-1)"));
+
+/* black hole (hero only, loops left to right), lensed stars, pointer black hole */
+(function(){
+const sky=$("#sky"),bh=$("#bh"),hero=$("#arrival"),ptr=$("#ptr"),astro=$("#astro"),ab=$("#abAstro");
+/* RPG pixel astronaut */
+const PAL={o:"#1B1033",w:"#F4F6FF",s:"#A9B8F2",v:"#27D7FF",h:"#E6FDFF",O:"#FF8A3D",d:"#C94A12",y:"#FFD23F",p:"#8B5CFF",r:"#FF3D6E"};
+const ROWS=["....oooooooo....","..ooowwwwwwooo..",".oowwwwwwwwwwoo.",".owwoooooooowwo.",".owovvvvvvvvowo.",".owovhhvvvvvowo.",".owovvvvvvvvowo.",".oswoooooooowso.","..ossswwwwssso..",".opoOOOOOOOOopo.",".opoOOyyrrOOopo.",".opoOOOOOOOOopo.","..oyyOOOOOOyyo..","..ooddddddddoo..","...oOOOOOOOOo...","..oOOOo..oOOOo..","..oOOOo..oOOOo..",".oyyyyo..oyyyyo.",".oyyyyo..oyyyyo.",".oooooo..oooooo."];
+const spr=ROWS.map((row,y)=>{let out="",x=0;while(x<row.length){const c=row[x];if(c==="."){x++;continue}let n=1;while(row[x+n]===c)n++;out+=`<rect x="${x}" y="${y}" width="${n}" height="1" fill="${PAL[c]}"/>`;x+=n}return out}).join("");
+[astro&&astro.querySelector("svg"),ab].forEach(e=>e&&(e.innerHTML=spr));
+const moveA=()=>{if(astro)astro.style.transform=`translateY(${80+scrollY/Math.max(1,document.documentElement.scrollHeight-innerHeight)*(innerHeight-200)}px)`};
+addEventListener("scroll",moveA,{passive:true});moveA();
+
+const gs=sky.getContext("2d"),g=bh.getContext("2d");if(!gs||!g)return;
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches,fine=matchMedia("(pointer:fine)").matches,rnd=(a,b)=>a+Math.random()*(b-a);
+let W,H,dpr,hw,hh,R=60,bx=0,by=0,vx=0,vy=0,hv=true,fn=0,raf,px=0,py=0,qx=0,qy=0,pOn=false;const t0=performance.now();
+const stars=Array.from({length:420},()=>({x:Math.random(),y:Math.random(),s:rnd(.9,2.3),a:rnd(.5,1),c:Math.random()<.22?"255,214,150":"245,238,224"}));
+const P=Array.from({length:2400},()=>{const k=Math.random(),r=1.45+k*k*2.5,h=1-(r-1.45)/2.5;return{r,h,t:Math.random()*6.283,j:rnd(.6,1),col:`rgb(${214+41*h|0},${154+72*h|0},${90+80*h|0})`}});
+const RINGS=[[1.7,1.6,3,"rgba(255,226,168,.95)"],[2.2,1.2,2.6,"rgba(245,185,106,.9)"],[2.85,.9,2.4,"rgba(227,154,82,.85)"],[3.5,.7,2,"rgba(201,128,72,.8)"]];
+function size(){dpr=Math.min(devicePixelRatio||1,2);W=innerWidth;H=innerHeight;hw=hero.clientWidth;hh=hero.clientHeight;
+ sky.width=W*dpr;sky.height=H*dpr;bh.width=hw*dpr;bh.height=hh*dpr;gs.setTransform(dpr,0,0,dpr,0,0);g.setTransform(dpr,0,0,dpr,0,0);R=Math.min(hw,hh)*(hw<720?.085:.1)}
+function place(ph){bx=-R*4+(hw+R*8)*ph;by=hh*(hw<720?.4:.46);const r=hero.getBoundingClientRect();vx=r.left+bx;vy=r.top+by}
+function drawSky(on){gs.clearRect(0,0,W,H);const E=R*1.5;
+ for(const s of stars){let x=s.x*W,y=s.y*H,z=s.s;
+  if(on){const dx=x-vx,dy=y-vy,b=Math.hypot(dx,dy)||1,th=.5*(b+Math.sqrt(b*b+4*E*E));if(th<R*1.02)continue;const k=th/b;x=vx+dx*k;y=vy+dy*k;z*=1+Math.min(2.5,E/b*.8)}
+  gs.fillStyle=`rgba(${s.c},${s.a})`;gs.fillRect(x,y,z,z)}}
+function drawBH(){g.clearRect(0,0,hw,hh);g.save();g.translate(bx,by);g.rotate(-.1);
+ const Z=Math.max(1,R/80),mapB=(t,r)=>[Math.cos(t)*r,-Math.abs(Math.sin(t))*(R*1.02+(r-1.45*R)*.5)],mapF=(t,r)=>[Math.cos(t)*r,Math.sin(t)*r*.2];
+ const dots=f=>{g.globalCompositeOperation="lighter";for(const p of P){const sn=Math.sin(p.t);if((sn>0)!==f)continue;const cs=Math.cos(p.t),r=p.r*R,y=f?sn*r*.2:-Math.abs(sn)*(R*1.02+(r-1.45*R)*.5);g.globalAlpha=Math.min(1,(.4+.6*p.h)*(.6+.4*cs)*p.j*1.2);g.fillStyle=p.col;const z=(1.4+p.h*2)*Z;g.fillRect(cs*r,y,z,z)}g.globalAlpha=1;g.globalCompositeOperation="source-over"};
+ const rings=f=>{g.globalCompositeOperation="lighter";RINGS.forEach(([k,sp,w,col])=>{const r=k*R;g.setLineDash([r*.2,r*.1]);g.lineDashOffset=-fn*sp;g.lineWidth=w*Z;g.strokeStyle=col;g.beginPath();for(let j=0;j<=64;j++){const t=f?j/64*Math.PI:Math.PI+j/64*Math.PI,q=f?mapF(t,r):mapB(t,r);j?g.lineTo(q[0],q[1]):g.moveTo(q[0],q[1])}g.stroke()});g.setLineDash([]);g.globalCompositeOperation="source-over"};
+ dots(false);rings(false);
+ const gl=g.createRadialGradient(0,0,R*.9,0,0,R*1.6);gl.addColorStop(0,"rgba(255,214,150,.55)");gl.addColorStop(1,"rgba(214,154,90,0)");g.fillStyle=gl;g.beginPath();g.arc(0,0,R*1.6,0,6.283);g.fill();
+ g.fillStyle="#000";g.beginPath();g.arc(0,0,R,0,6.283);g.fill();g.strokeStyle="rgba(255,230,180,.85)";g.lineWidth=2;g.beginPath();g.arc(0,0,R*1.02,0,6.283);g.stroke();
+ rings(true);dots(true);g.restore()}
+/* words */
+const words=[];
+function split(el){const tw=document.createTreeWalker(el,NodeFilter.SHOW_TEXT),ns=[];while(tw.nextNode())ns.push(tw.currentNode);
+ ns.forEach(n=>{if(!n.nodeValue.trim())return;const f=document.createDocumentFragment(),h=!!el.closest(".hero");n.nodeValue.split(/(\s+)/).forEach(t=>{if(!t)return;if(/^\s+$/.test(t))f.append(t);else{const sp=document.createElement("span");sp.className="w";sp.textContent=t;f.append(sp);words.push({el:sp,cx:0,cy:0,on:0,h})}});n.replaceWith(f)})}
+document.querySelectorAll(".hero h1,.hero .sub,.hero .tag,main h2,.bio p,.sig .lead,.card h3,.card p,.sk h3").forEach(split);
+function measure(){words.forEach(w=>{w.el.style.transform="";w.on=0});words.forEach(w=>{const r=w.el.getBoundingClientRect();w.cx=r.left+r.width/2+scrollX;w.cy=r.top+r.height/2+scrollY})}
+function lens(heroOn,ptrOn){const L=R*4.4,E=R*.95,pl=96,pe=15;
+ for(const w of words){const x=w.cx-scrollX,y=w.cy-scrollY;let tx=0,ty=0,rot=0,sx=1,sy=1,on=0;
+  if(heroOn&&w.h){const dx=x-vx,dy=y-vy,d=Math.hypot(dx,dy);if(d<L&&d>1){const f=1-d/L,m=(.5*(d+Math.sqrt(d*d+4*E*E))-d)*Math.pow(f,1.1);let a=Math.atan2(dy,dx)*57.3+90;a=((a+270)%180)-90;tx+=dx/d*m;ty+=dy/d*m;rot+=a*f*.6;sx*=1+f*.8;sy*=1-f*.2;on=1}}
+  if(ptrOn){const dx=x-px,dy=y-py,d=Math.hypot(dx,dy);if(d<pl&&d>.5){const f=1-d/pl,m=Math.min(14,.5*(d+Math.sqrt(d*d+4*pe*pe))-d)*Math.pow(f,1.2);tx+=dx/d*m;ty+=dy/d*m;sx*=1+f*.22;sy*=1-f*.08;on=1}}
+  if(on){w.el.style.transform=`translate(${tx}px,${ty}px) rotate(${rot}deg) scale(${sx},${sy})`;w.on=1}else if(w.on){w.el.style.transform="";w.on=0}}}
+/* pointer black hole */
+if(fine&&!reduce){document.body.classList.add("bhc");
+ addEventListener("pointermove",e=>{if(e.pointerType==="touch")return;qx=e.clientX;qy=e.clientY;if(!pOn){px=qx;py=qy;pOn=true;ptr.style.opacity=1}ptr.classList.toggle("hot",!!(e.target.closest&&e.target.closest("a,button,[data-open],.card")))},{passive:true});
+ document.documentElement.addEventListener("mouseleave",()=>{pOn=false;ptr.style.opacity=0})}
+function loop(now){raf=requestAnimationFrame(loop);const po=pOn&&!dlg.open;
+ if(pOn){px+=(qx-px)*.4;py+=(qy-py)*.4;ptr.style.transform=`translate(${px}px,${py}px)`;ptr.style.visibility=dlg.open?"hidden":"visible"}
+ if(hv){fn++;place(((now-t0)/42000)%1);drawSky(true);drawBH()}
+ if(hv||po)lens(hv,po)}
+let rt;function re(){size();measure();if(reduce||!hv){place(.68);drawSky(hv);if(reduce)drawBH()}}
+size();measure();
+new IntersectionObserver(e=>{hv=e[0].isIntersecting;if(!hv){drawSky(false)}}).observe(hero);
+const rz=()=>{clearTimeout(rt);rt=setTimeout(re,150)};
+addEventListener("resize",rz);addEventListener("load",rz);document.fonts&&document.fonts.ready.then(rz);new ResizeObserver(rz).observe($("main"));
+if(reduce){place(.68);drawSky(true);drawBH()}else{raf=requestAnimationFrame(loop);document.addEventListener("visibilitychange",()=>{cancelAnimationFrame(raf);if(!document.hidden)raf=requestAnimationFrame(loop)})}
+})();
+</script>
+</body>
+</html>
